@@ -5,7 +5,7 @@ using namespace std;
 
 void printArray(int stream[], int n)
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n+1; i++)
 		printf("%d ", stream[i]);
 	printf("\n");
 }
@@ -14,10 +14,10 @@ void selectKItems(int stream[], int n, int k)
 {
 	int i;
 	int* reservoir = new int[k];
-	for (i = 0; i < k; i++)
+	for (i = 0; i < k-1; i++)
 		reservoir[i] = stream[i];
 	srand(time(NULL));
-	for (i = k; i < n; i++)
+	for (i = k; i < n; i+2)
 	{
 		int j = rand() % (i + 1);
 		if (j < k)

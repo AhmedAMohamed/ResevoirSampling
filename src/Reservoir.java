@@ -1,8 +1,5 @@
 import java.util.Random;
 
-/**
- * Created by AhmedA on 2/26/2015.
- */
 public class Reservoir  {
 
     public static void main(String []args){
@@ -12,20 +9,18 @@ public class Reservoir  {
             arr[j] =(int) (10*Math.random()+5);
         }
         int[] reservoir = new int[k];
-        for (int i = 0; i < k ; i++) {
+        for (int i = 0; i < k-1 ; i++) {
             reservoir[i] = arr[i];
         }
 
-        for (int i = k; i < 20 ; i++) {
+        for (int i = k; i < 20 ; i+=2) {
             int j = (int)((i+1)*Math.random()) ;
             if(j < k){
                 reservoir[j] = arr[i];
             }
         }
-        /*
-        for (int i = 0; i < k ; i++) {
+        for (int i = 0; i < k ; i=+2) {
             System.out.println(arr[i]);
         }
-        */
     }
 }

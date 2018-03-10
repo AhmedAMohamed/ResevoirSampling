@@ -2,13 +2,13 @@ __author__ = 'AhmedA'
 import random
 def random_subset( iterator, K ):
     result = []
-    N = 0
+    N = -1
     for item in iterator:
         N += 1
         if len( result ) < K:
             result.append( item )
         else:
-            s = int(random.random() * N)
+            s = int(random.random() * (N-1))
             if s < K:
                 result[ s ] = item
 
